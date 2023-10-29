@@ -55,7 +55,94 @@ plt.show()
 # output:
 ![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/ce5f2080-e339-44ac-9904-1eef48114ef6)
 
+# 1) Which day of the week has the highest total bill amount ?
+```python
+sns.barplot(x=df['day'],y=df['total_bill'],hue=df['day'])
+plt.legend(loc="center")
+plt.title("Highest Total Bill Amount by day of the week")
+plt.show()
+```
+# ouput :
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/ffb8cdb1-19c9-48c1-9e26-1dafe8118b10)
 
+# 2) What is the average tip amount given by smokers and non_smokers?
+```python
+sns.boxplot(x=df['smoker'],y=df['tip'],hue=df['smoker'])
+plt.title("Average Tip Amount given by Smokers and Non-smokers")
+```
+# output :
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/ed0166ca-bf55-4bb3-98b7-f9a087f94f95)
+
+# 3) How does the tip percentage vary based on the size of the dining party?
+```python
+df["tip_percent"]=df["tip"]/df["total_bill"]
+sns.scatterplot(x=df['size'],y=df['tip_percent'],data=df)
+plt.title("Tip Percentage by Dining Party size")
+```
+# output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/148a9f12-d8d0-4717-8df0-d98999c66caa)
+
+# 4) Which gender tends to leave higher tips?
+```python
+sns.boxplot(x=df['sex'],y=df['tip'],hue=df['sex'])
+plt.title("Tips BAsed on gender")
+```
+# output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/43ba394c-372b-4633-a1c5-46f3234b613f)
+
+# 5) Is there any relationship between the total bill amount and the day of the week?
+```python
+sns.scatterplot(x=df['day'],y=df['total_bill'],hue=df['day'])
+plt.legend(loc="best")
+plt.title("Total bill amount by day of the week")
+```
+# output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/e34a1607-4114-415f-b82d-436ff79f85cf)
+
+# 6) How does the distribution of total bill amounts vary across different time periods (lunch vs. dineer)?
+```python
+sns.histplot(data=df,x="total_bill",hue="time",element="step",stat="density")
+plt.title("Distribution of Total Bill Amounts by Time of Day")
+plt.show()
+```
+# Output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/0dbdbfde-7864-4575-b8bb-de56e093f7c4)
+
+# 7) Which dining party size group tends to have the highest average total bill amount?
+```python
+sns.barplot(x=df['size'],y=df['total_bill'],hue=df['size'])
+plt.title("Average total Bill amount by Dininng party size]")
+plt.show()
+```
+# output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/74c7dcb4-f368-49a9-8bbf-90dc0475de23)
+
+# 8) What is the distribution of tip amounts for each day of the week?
+```python
+sns.boxplot(x="day",y='tip',data=df)
+plt.title("Tip amount by dy of Week")
+plt.show()
+```
+# output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/2428496f-e56f-4cfe-a1f6-f034d05eec83)
+
+# 9) How does the amount vary based on the type of service (lunch vs. dinner)?
+```python
+sns.violinplot(x="time",y="tip",data=df)
+plt.title("Tip Amount time Of day")
+plt.show()
+```
+# Output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/5284120b-1f34-413a-ab7f-e8dde67acf27)
+
+# 10) Is there any correlation between the total amount and amount and the tip amount ?
+```python
+sns.scatterplot(x="total_bill",y="tip",data=df)
+plt.title("Correaltion between Tip Amount and Total Bill Amount")
+plt.show()
+```
+# output:
+![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/410a5577-4fe5-42d5-bde7-17b79e343d9a)
 
 
 
