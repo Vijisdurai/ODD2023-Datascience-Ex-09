@@ -144,8 +144,8 @@ plt.show()
 # output:
 ![image](https://github.com/Vijisdurai/ODD2023-Datascience-Ex-09/assets/118343184/410a5577-4fe5-42d5-bde7-17b79e343d9a)
 
-
-
+# Result:
+Thus,the Data Visualization on a complex dataset is successfully performed.
 
 
 
